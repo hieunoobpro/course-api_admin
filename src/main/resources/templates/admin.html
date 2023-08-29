@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách khóa học</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+
+    </style>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="header d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-start align-items-center">
+                <div class="logo">
+                    <a href="./course-list.html">
+                        <img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+                            alt="logo">
+                    </a>
+                </div>
+                <div class="menu">
+                    <a class="text-white text-uppercase ms-5" href="./course-onlab-list.html">Phòng lab</a>
+                    <a class="text-white text-uppercase ms-3" href="./course-online-list.html">Trực tuyến</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="create-course-btn" style="  background-color: #0d53a3;"><a href="./course-create.html" style="color: aliceblue;">Tạo khóa học</a></button>
+    <button id="reset-btn"><a href="admin.html"style="color: aliceblue;" >Reset</a></button>
+    <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th class="wider-cell">Tên khoa học</th>
+            <th>Hình thức</th>
+            <th class="wider-cell">Chủ đề</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td class="wider-cell">Khóa học A</td>
+            <td>Hình thức A</td>
+            <td class="wider-cell">Chủ đề A</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td class="wider-cell">Khóa học B</td>
+            <td>Hình thức B</td>
+            <td class="wider-cell">Chủ đề B</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="wider-cell">Khóa học C</td>
+            <td>Hình thức C</td>
+            <td class="wider-cell">Chủ đề C</td>
+          </tr>
+          <!-- Thêm các hàng (rows) khác tại đây -->
+        </tbody>
+      </table>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
