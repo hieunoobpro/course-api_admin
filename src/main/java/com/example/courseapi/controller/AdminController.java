@@ -9,12 +9,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/admin/courses")
 public class AdminController {
     @Autowired
     private CourseService courseService;
-
+    @GetMapping
+    public ResponseEntity<List<Course>> getCourses(@RequestParam(value = "type", required = false) String type, @RequestParam(value = "name", required = false) String name, @RequestParam(value = "topic", required = false) String topic ) {
+        return ResponseEntity.ok(courseService.getAllCourse(type, name, topic));
+    }
     @GetMapping("/{id}")
     public String getCourseDetails(@PathVariable("id") Long id, Model model) {
         Integer intValue = Math.toIntExact(id);
