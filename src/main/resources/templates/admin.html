@@ -30,6 +30,9 @@
 </head>
 
 <body>
+<div class="container">
+    <div class="row">
+        <div th:replace="~{fragments/fragment :: topiclist(topicList = ${topicList})}"></div>
     <div class="header d-flex align-items-center">
         <div class="container-fluid">
             <div class="d-flex justify-content-start align-items-center">
@@ -49,37 +52,14 @@
 
     <button id="create-course-btn" style="  background-color: #0d53a3;"><a href="./course-create.html" style="color: aliceblue;">Tạo khóa học</a></button>
     <button id="reset-btn"><a href="admin.html"style="color: aliceblue;" >Reset</a></button>
-    <table>
-        <thead>
-          <tr>
-            <th>STT</th>
-            <th class="wider-cell">Tên khoa học</th>
-            <th>Hình thức</th>
-            <th class="wider-cell">Chủ đề</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td class="wider-cell">Khóa học A</td>
-            <td>Hình thức A</td>
-            <td class="wider-cell">Chủ đề A</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td class="wider-cell">Khóa học B</td>
-            <td>Hình thức B</td>
-            <td class="wider-cell">Chủ đề B</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td class="wider-cell">Khóa học C</td>
-            <td>Hình thức C</td>
-            <td class="wider-cell">Chủ đề C</td>
-          </tr>
-          <!-- Thêm các hàng (rows) khác tại đây -->
-        </tbody>
-      </table>
+    <div th:replace="~{fragments/fragment :: courselist(courseList = ${courseList})}"></div>
+    <div class="row">
+        <div class="d-flex justify-content-center mt-3" id="pagination">
+
+        </div>
+    </div>
+    </div>
+</div>
     <script src="./js/main.js"></script>
 </body>
 

@@ -35,16 +35,6 @@
             </div>
         </div>
     </div>
-
-    <!DOCTYPE html>
-    <html>
-
-    <head>
-        <title>Tạo khóa học</title>
-        <!-- Đưa các tài nguyên CSS vào đây -->
-    </head>
-
-    <body>
         <h1>Tạo khóa học</h1>
         <form action="/admin/courses/create" method="POST">
             <div>
@@ -70,13 +60,25 @@
                 <label for="userId">Người dùng ID:</label>
                 <input type="text" id="userId" name="userId" required>
             </div>
-            <button type="button" onclick="addCourse()">Tạo khóa học</button>
-
+            <div class="d-flex mb-3 buttons">
+                <button class="btn btn-primary me-2">Tạo khóa học</button>
+                <a class="btn btn-secondary" href="/admin/courses">Quay lại</a>
+            </div>
         </form>
-        <!-- Đưa các tài nguyên JavaScript vào đây -->
-    </body>
-
-    </html>
+    <div class="mb-3">
+        <label for="courseTopic" class="form-label">Chủ đề</label>
+        <select class="form-select" id="courseTopic" name="courseTopic" multiple>
+            <option value="" disabled selected>Chọn chủ đề</option>
+            <option th:each="topic : ${topicList}" th:text="${topic}"></option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="courseAdvisor" class="form-label">Tư vấn viên</label>
+        <select class="form-select" id="courseAdvisor" name="courseAdvisor">
+            <option value="" disabled selected>Chọn tư vấn viên</option>
+            <option th:each="user : ${userList}" th:value="${user.name}" th:text="${user.name}"></option>
+        </select>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
