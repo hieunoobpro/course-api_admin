@@ -61,4 +61,10 @@ public class AdminController {
 
         return "redirect:/admin/courses/" + id; // Chuyển hướng về trang chi tiết khóa học sau khi upload thành công
     }
+    @PostMapping("/create")
+    public String createCourse(@ModelAttribute("course") Course course) {
+        // Thực hiện lưu khóa học mới vào cơ sở dữ liệu
+        courseService.saveCourse(course);
+        return "redirect:/admin/courses"; // Chuyển hướng về trang danh sách khóa học sau khi tạo thành công
+    }
 }
